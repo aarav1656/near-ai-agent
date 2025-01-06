@@ -9,3 +9,4 @@ export async function GET() {
 
   return NextResponse.json({ accountId: accountId });
 }
+// small changes
