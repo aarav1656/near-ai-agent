@@ -1,101 +1,78 @@
-import Image from "next/image";
+import React from 'react';
+import { Terminal, Cpu, Wallet, Bitcoin, Ethereum } from 'lucide-react';
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-black text-green-400 font-mono">
+      {/* Hero Section */}
+      <div className="border-b-2 border-green-400">
+        <div className="container mx-auto px-4 py-16">
+          <div className="text-center">
+            <h1 className="text-6xl font-bold mb-6 animate-pulse">BITTE</h1>
+            <p className="text-xl mb-8">BUILD AND EXECUTE TRANSACTIONS ON BITCOIN & EVM CHAINS</p>
+            <Terminal className="mx-auto w-16 h-16 mb-8" />
+            <button className="bg-green-400 text-black px-8 py-3 rounded hover:bg-green-300 transition-colors">
+              Launch App
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src=""
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src=""
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </div>
+
+      {/* Features Grid */}
+      <div className="container mx-auto px-4 py-16">
+        <h2 className="text-4xl font-bold mb-12 text-center">FEATURES</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors">
+            <Wallet className="w-8 h-8 mb-4" />
+            <h3 className="text-xl font-bold mb-4">Multi-Chain Support</h3>
+            <p>Generate and manage addresses across Bitcoin and Ethereum networks with custom derivation paths.</p>
+          </div>
+          
+          <div className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors">
+            <Cpu className="w-8 h-8 mb-4" />
+            <h3 className="text-xl font-bold mb-4">AI-Powered Transactions</h3>
+            <p>Build and execute transactions using natural language through our advanced AI agent.</p>
+          </div>
+          
+          <div className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors">
+            <Bitcoin className="w-8 h-8 mb-4" />
+            <h3 className="text-xl font-bold mb-4">Bitcoin Integration</h3>
+            <p>Seamlessly create and manage Bitcoin transactions directly from your NEAR wallet.</p>
+          </div>
+          
+          <div className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors">
+            <Ethereum className="w-8 h-8 mb-4" />
+            <h3 className="text-xl font-bold mb-4">Ethereum Support</h3>
+            <p>Execute Ethereum transactions and interact with smart contracts using simple commands.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Terminal Demo */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="bg-gray-900 rounded-lg p-6 border-2 border-green-400">
+          <div className="flex gap-2 mb-4">
+            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+          <div className="font-mono">
+            <p className="mb-2">$ generate ethereum transaction</p>
+            <p className="text-gray-500 mb-2">> Enter amount: 0.001 ETH</p>
+            <p className="text-gray-500 mb-2">> Enter recipient: 0x67E6...</p>
+            <p className="text-green-400">Transaction generated successfully!</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="border-t-2 border-green-400 py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p>Built with ❤️ on NEAR Protocol</p>
+        </div>
       </footer>
     </div>
   );
-}
+};
+
+export default Home;
