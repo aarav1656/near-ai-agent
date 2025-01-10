@@ -8,7 +8,7 @@ const Home = () => {
       <div className="border-b-2 border-green-400">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center">
-            <h1 className="text-6xl font-bold mb-6 animate-pulse">BITTE</h1>
+            <h1 className="text-6xl font-bold mb-6 animate-pulse"></h1>
             <p className="text-xl mb-8">BUILD AND EXECUTE TRANSACTIONS ON BITCOIN & EVM CHAINS</p>
             <Terminal className="mx-auto w-16 h-16 mb-8" />
             <button className="bg-green-400 text-black px-8 py-3 rounded hover:bg-green-300 transition-colors">
@@ -48,7 +48,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Terminal Demo */}
+      
       <div className="container mx-auto px-4 py-16">
         <div className="bg-gray-900 rounded-lg p-6 border-2 border-green-400">
           <div className="flex gap-2 mb-4">
