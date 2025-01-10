@@ -59,13 +59,12 @@ const Home = () => {
           <div className="font-mono">
             <p className="mb-2">$ generate ethereum transaction</p>
             <p className="text-gray-500 mb-2">> Enter amount: 0.001 ETH</p>
-            <p className="text-gray-500 mb-2">> Enter recipient: 0x67E6...</p>
+            <p className="text-gray-500 mb-2">> Enter recipient: 4b67E6...</p>
             <p className="text-green-400">Transaction generated successfully!</p>
           </div>
         </div>
       </div>
-
-      {/* Footer */}
+ 
       <footer className="border-t-2 border-green-400 py-8">
         <div className="container mx-auto px-4 text-center">
           <p>Built with ❤️ by Aarav on NEAR Protocol</p>
