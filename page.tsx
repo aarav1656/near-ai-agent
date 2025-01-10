@@ -4,7 +4,7 @@ import { Terminal, Cpu, Wallet, Bitcoin, Ethereum } from 'lucide-react';
 const Home = () => {
   return (
     <div className="min-h-screen bg-black text-green-400 font-mono">
-      {/* Hero Section */}
+     
       <div className="border-b-2 border-green-400">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center">
@@ -18,7 +18,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Features Grid */}
+      
       <div className="container mx-auto px-4 py-16">
         <h2 className="text-4xl font-bold mb-12 text-center">FEATURES</h2>
         <div className="grid md:grid-cols-2 gap-8">
@@ -68,7 +68,7 @@ const Home = () => {
       {/* Footer */}
       <footer className="border-t-2 border-green-400 py-8">
         <div className="container mx-auto px-4 text-center">
-          <p>Built with ❤️ on NEAR Protocol</p>
+          <p>Built with ❤️ by Aarav on NEAR Protocol</p>
         </div>
       </footer>
     </div>
