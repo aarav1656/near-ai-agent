@@ -4,7 +4,7 @@ import { Arbitrum } from '../../../utils/arbitrum';
 import { Wallet } from '../../../utils/near-wallet';
 import { deriveChildPublicKey, najPublicKeyStrToUncompressedHexPoint, uncompressedHexPointToEvmAddress } from '../../../utils/kdf';
 
-const arbitrum = new Arbitrum(process.env.NEXT_PUBLIC_ARBITRUM_RPC_URL || '', 'sepolia');
+const arbitrum = new Arbitrum("https://arbitrum-sepolia.infura.io/v3/2QvY7pMMCwBjGKUF96Km0QsRN8g" || '', 'sepolia');
 const MPC_CONTRACT_ID = 'v1.signer-prod.testnet';
 const wallet = new Wallet({ networkId: 'testnet', createAccessKeyFor: MPC_CONTRACT_ID });
 

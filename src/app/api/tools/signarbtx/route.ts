@@ -4,7 +4,7 @@ import { Arbitrum } from '../../../utils/arbitrum';
 import { Wallet } from '../../../utils/near-wallet';
 
 // Initialize Arbitrum client with testnet configuration
-const arbitrum = new Arbitrum(process.env.NEXT_PUBLIC_ARBITRUM_RPC_URL || '', 'testnet');
+const arbitrum = new Arbitrum("https://arbitrum-sepolia.infura.io/v3/2QvY7pMMCwBjGKUF96Km0QsRN8g" || '', 'sepolia');
 
 export async function POST(request: Request) {
   try {
