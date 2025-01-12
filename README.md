@@ -33,6 +33,7 @@ With the growing demand for multi-chain solutions and simplified blockchain inte
 
 ```mermaid
 
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryTextColor': '#000000', 'secondaryTextColor': '#000000', 'tertiaryTextColor': '#000000', 'noteTextColor': '#000000', 'textColor': '#000000' }}}%%
 graph TB
     subgraph "User Interface"
         UI[User Interface]
@@ -99,6 +100,7 @@ graph TB
     class DeriveETH,BuildETH,DeriveBTC,BuildBTC,SignBTC api
     class ETH,BTC,KDF service
     class ETH_NET,BTC_NET,MEMPOOL network
+
 ```
 ### Use Cases
 
