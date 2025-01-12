@@ -23,6 +23,7 @@
     "ethers": "^6.13.2",
     "js-sha3": "^0.9.3",
     "keccak": "^3.0.4",
+    "lucide-react": "^0.471.0",
     "near-api-js": "^4.0.4",
     "near-seed-phrase": "^0.2.1",
     "next": "14.2.15",

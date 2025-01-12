@@ -1,5 +1,5 @@
 import React from 'react';
-import { Terminal, Cpu, Wallet, Bitcoin, Ethereum } from 'lucide-react';
+import { Terminal, Cpu, Wallet, Bitcoin } from 'lucide-react';
 
 const Home = () => {
   return (
@@ -41,7 +41,7 @@ const Home = () => {
           </div>
           
           <div className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors">
-            <Ethereum className="w-8 h-8 mb-4" />
+            <h2>Ethereum</h2>
             <h3 className="text-xl font-bold mb-4">Ethereum Support</h3>
             <p>Execute Ethereum transactions and interact with smart contracts using simple commands.</p>
           </div>
@@ -67,7 +67,7 @@ const Home = () => {
  
       <footer className="border-t-2 border-green-400 py-8">
         <div className="container mx-auto px-4 text-center">
-          <p>Built with ❤️ by Aarav on NEAR Protocol</p>
+          <p>Built with ❤️ by Aarav and Kamal on NEAR Protocol</p>
         </div>
       </footer>
     </div>
