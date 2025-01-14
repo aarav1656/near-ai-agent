@@ -2,7 +2,7 @@
 
 Built using Bitte , Helps the users Build and Execute Transactions on Bitcoin and EVM Chains.
 
-Check the [docs](https://docs.bitte.ai/agents/quick-start) 
+Check the [docs](https://quiver-prose-73a.notion.site/near-ai-agent-17bfce1a915b8045a629e300ca42cf97?pvs=73) 
 
 ## Features
 
