@@ -1,7 +1,4 @@
 import React from 'react';
-<<<<<<< Updated upstream:src/app/page.tsx
-import { Terminal, Cpu, Wallet, Bitcoin } from 'lucide-react';
-=======
 import { motion } from 'framer-motion';
 import { Terminal, Cpu, Wallet, Bitcoin } from 'lucide-react';
 
@@ -18,7 +15,6 @@ const staggerContainer = {
     }
   }
 };
->>>>>>> Stashed changes:page.tsx
 
 const Home = () => {
   return (
@@ -79,31 +75,6 @@ const Home = () => {
           FEATURES
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-8">
-<<<<<<< Updated upstream:src/app/page.tsx
-          <div className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors">
-            <Wallet className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-bold mb-4">Multi-Chain Support</h3>
-            <p>Generate and manage addresses across Bitcoin and Ethereum networks with custom derivation paths.</p>
-          </div>
-          
-          <div className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors">
-            <Cpu className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-bold mb-4">AI-Powered Transactions</h3>
-            <p>Build and execute transactions using natural language through our advanced AI agent.</p>
-          </div>
-          
-          <div className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors">
-            <Bitcoin className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-bold mb-4">Bitcoin Integration</h3>
-            <p>Seamlessly create and manage Bitcoin transactions directly from your NEAR wallet.</p>
-          </div>
-          
-          <div className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors">
-            <h2>Ethereum</h2>
-            <h3 className="text-xl font-bold mb-4">Ethereum Support</h3>
-            <p>Execute Ethereum transactions and interact with smart contracts using simple commands.</p>
-          </div>
-=======
           {[
             {
               icon: <Wallet className="w-8 h-8 mb-4" />,
@@ -137,7 +108,6 @@ const Home = () => {
               <p>{feature.description}</p>
             </motion.div>
           ))}
->>>>>>> Stashed changes:page.tsx
         </div>
       </motion.div>
       
