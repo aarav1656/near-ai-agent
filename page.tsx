@@ -178,7 +178,7 @@ const Home = () => {
               whileTap={{ scale: 0.95 }}
               className="bg-green-400 text-black px-8 py-3 rounded-none hover:bg-green-300 transition-colors uppercase tracking-wider"
             >
-              &gt; Launch Terminal
+              &gt; Launch App
             </motion.button>
           </div>
         </div>
