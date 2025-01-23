@@ -21,7 +21,6 @@ export class Polygon {
   }
 
   async queryGasPrice() {
-    // Polygon gas pricing is generally similar to Ethereum
     const maxFeePerGas = await this.web3.eth.getGasPrice();
     const maxPriorityFeePerGas = await this.web3.eth.getMaxPriorityFeePerGas();
     return { maxFeePerGas, maxPriorityFeePerGas };
@@ -45,7 +44,6 @@ export class Polygon {
   async createPayload(sender, receiver, amount, data) {
     const common = new Common({ chain: this.chain_id });
 
-    // Get the nonce & gas price
     const nonce = await this.web3.eth.getTransactionCount(sender);
     const { maxFeePerGas, maxPriorityFeePerGas } = await this.queryGasPrice();
 
