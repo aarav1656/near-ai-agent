@@ -1,154 +1,261 @@
-import React from 'react';
-<<<<<<< Updated upstream:src/app/page.tsx
-import { Terminal, Cpu, Wallet, Bitcoin } from 'lucide-react';
-=======
-import { motion } from 'framer-motion';
-import { Terminal, Cpu, Wallet, Bitcoin } from 'lucide-react';
+// @ts-nocheck
+"use client"
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Terminal, Cpu, Wallet, Bitcoin, Menu, X, Github, Twitter } from 'lucide-react';
 
-const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-};
-
-const staggerContainer = {
-  animate: {
+const navVariants = {
+  hidden: { y: -100 },
+  visible: { 
+    y: 0,
     transition: {
-      staggerChildren: 0.2
+      type: "spring",
+      stiffness: 300,
+      damping: 30
     }
   }
 };
->>>>>>> Stashed changes:page.tsx
+
+const glowAnimation = {
+  animate: {
+    boxShadow: ["0 0 10px #4ade80", "0 0 20px #4ade80", "0 0 10px #4ade80"],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+    }
+  }
+};
+
+const scanlineEffect = {
+  animate: {
+    y: ["0%", "100%"],
+    transition: {
+      duration: 8,
+      repeat: Infinity,
+      ease: "linear"
+    }
+  }
+};
 
 const Home = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className="min-h-screen bg-black text-green-400 font-mono">
+    <div className="min-h-screen bg-black text-green-400 font-mono relative overflow-hidden">
+      {/* Scanline effect */}
+      <motion.div 
+        variants={scanlineEffect}
+        animate="animate"
+        className="absolute inset-0 bg-gradient-to-b from-transparent via-green-400/5 to-transparent h-[10px] pointer-events-none"
+      />
+
+      {/* CRT screen effect */}
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_rgba(0,0,0,0)_0%,_rgba(0,0,0,0.8)_80%)] opacity-50" />
+
+      {/* Navbar */}
+      <motion.nav 
+        variants={navVariants}
+        initial="hidden"
+        animate="visible"
+        className="border-b-2 border-green-400 relative z-50"
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center py-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="text-2xl font-bold"
+            >
+              CC_
+            </motion.div>
+            
+            {/* Desktop Menu */}
+            <div className="hidden md:flex space-x-8">
+              {["Features", "Documentation", "Community", "Launch App"].map((item, index) => (
+                <motion.a
+                  key={item}
+                  href="#"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 * index }}
+                  whileHover={{ 
+                    scale: 1.1,
+                    textShadow: "0 0 8px rgb(74, 222, 128)",
+                  }}
+                  className="cursor-pointer"
+                >
+                  {item}
+                </motion.a>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden"
+            >
+              {isMenuOpen ? <X /> : <Menu />}
+            </motion.button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden border-t border-green-400"
+            >
+              <div className="container mx-auto px-4 py-4">
+                {["Features", "Documentation", "Community", "Launch App"].map((item) => (
+                  <motion.a
+                    key={item}
+                    href="#"
+                    whileHover={{ x: 10 }}
+                    className="block py-2"
+                  >
+                    {item}
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
+
+      {/* Hero Section */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="border-b-2 border-green-400"
+        className="border-b-2 border-green-400 relative"
       >
         <div className="container mx-auto px-4 py-16">
           <div className="text-center">
-            <motion.h1 
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="text-6xl font-bold mb-6"
-            >
-              CHAIN COMMANDER
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-xl mb-8"
-            >
-              BUILD AND EXECUTE TRANSACTIONS ON BITCOIN & EVM CHAINS
-            </motion.p>
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 0.5, type: "spring" }}
+              transition={{ 
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+                delay: 0.3 
+              }}
+              className="mb-8"
             >
-              <Terminal className="mx-auto w-16 h-16 mb-8" />
+              <Terminal className="mx-auto w-16 h-16" />
             </motion.div>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="text-6xl md:text-8xl font-bold mb-6 tracking-tighter"
+            >
+              CHAIN_
+              <motion.span
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ duration: 1, repeat: Infinity }}
+              >
+                |
+              </motion.span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="text-xl mb-8 tracking-wide"
+            >
+              EXECUTE.BUILD.DEPLOY_
+            </motion.p>
             <motion.button
+              variants={glowAnimation}
+              animate="animate"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-green-400 text-black px-8 py-3 rounded hover:bg-green-300 transition-colors"
+              className="bg-green-400 text-black px-8 py-3 rounded-none hover:bg-green-300 transition-colors uppercase tracking-wider"
             >
-              Launch App
+              &gt; Launch App
             </motion.button>
           </div>
         </div>
       </motion.div>
       
+      {/* Features Grid */}
       <motion.div 
-        variants={staggerContainer}
-        initial="initial"
-        whileInView="animate"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         className="container mx-auto px-4 py-16"
       >
         <motion.h2 
-          variants={fadeIn}
-          className="text-4xl font-bold mb-12 text-center"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold mb-12 tracking-wider"
         >
-          FEATURES
+          &gt; FEATURES_
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-8">
-<<<<<<< Updated upstream:src/app/page.tsx
-          <div className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors">
-            <Wallet className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-bold mb-4">Multi-Chain Support</h3>
-            <p>Generate and manage addresses across Bitcoin and Ethereum networks with custom derivation paths.</p>
-          </div>
-          
-          <div className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors">
-            <Cpu className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-bold mb-4">AI-Powered Transactions</h3>
-            <p>Build and execute transactions using natural language through our advanced AI agent.</p>
-          </div>
-          
-          <div className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors">
-            <Bitcoin className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-bold mb-4">Bitcoin Integration</h3>
-            <p>Seamlessly create and manage Bitcoin transactions directly from your NEAR wallet.</p>
-          </div>
-          
-          <div className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors">
-            <h2>Ethereum</h2>
-            <h3 className="text-xl font-bold mb-4">Ethereum Support</h3>
-            <p>Execute Ethereum transactions and interact with smart contracts using simple commands.</p>
-          </div>
-=======
           {[
             {
               icon: <Wallet className="w-8 h-8 mb-4" />,
-              title: "Multi-Chain Support",
-              description: "Generate and manage addresses across Bitcoin and Ethereum networks with custom derivation paths."
+              title: "MULTI-CHAIN_",
+              description: "Generate and manage addresses across networks with custom paths."
             },
             {
               icon: <Cpu className="w-8 h-8 mb-4" />,
-              title: "AI-Powered Transactions",
-              description: "Build and execute transactions using natural language through our advanced AI agent."
+              title: "AI-POWERED_",
+              description: "Build transactions using natural language through our AI agent."
             },
             {
               icon: <Bitcoin className="w-8 h-8 mb-4" />,
-              title: "Bitcoin Integration",
-              description: "Seamlessly create and manage Bitcoin transactions directly from your NEAR wallet."
+              title: "BITCOIN_",
+              description: "Create and manage Bitcoin transactions with ease."
             },
             {
               icon: <Terminal className="w-8 h-8 mb-4" />,
-              title: "Ethereum Support",
-              description: "Execute Ethereum transactions and interact with smart contracts using simple commands."
+              title: "ETHEREUM_",
+              description: "Execute smart contracts using simple terminal commands."
             }
           ].map((feature, index) => (
             <motion.div
               key={index}
-              variants={fadeIn}
-              whileHover={{ scale: 1.02 }}
-              className="border-2 border-green-400 p-6 rounded hover:bg-green-400/10 transition-colors"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+              whileHover={{ 
+                scale: 1.02,
+                boxShadow: "0 0 15px rgba(74, 222, 128, 0.3)"
+              }}
+              className="border-2 border-green-400 p-6 cursor-pointer bg-black"
             >
-              {feature.icon}
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.5 }}
+              >
+                {feature.icon}
+              </motion.div>
               <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-              <p>{feature.description}</p>
+              <p className="text-green-400/80">{feature.description}</p>
             </motion.div>
           ))}
->>>>>>> Stashed changes:page.tsx
         </div>
       </motion.div>
       
+      {/* Terminal Demo */}
       <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
         className="container mx-auto px-4 py-16"
       >
-        <div className="bg-gray-900 rounded-lg p-6 border-2 border-green-400">
+        <div className="bg-black rounded-none p-6 border-2 border-green-400">
           <div className="flex gap-2 mb-4">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -158,27 +265,67 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="font-mono"
           >
-            <p className="mb-2">$ generate ethereum transaction</p>
-            <p className="text-gray-500 mb-2">> Enter amount: 0.001 ETH</p>
-            <p className="text-gray-500 mb-2">> Enter recipient: 4b67E6...</p>
-            <p className="text-green-400">Transaction generated successfully!</p>
+            <TypewriterEffect text="$ init transaction --chain ethereum" />
+            <TypewriterEffect text="> Amount: 0.001 ETH" delay={2} />
+            <TypewriterEffect text="> Recipient: 0x4b67E6..." delay={3} />
+            <TypewriterEffect text="Transaction successful! ✓" delay={4} className="text-green-400" />
           </motion.div>
         </div>
       </motion.div>
  
+      {/* Footer */}
       <motion.footer 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         className="border-t-2 border-green-400 py-8"
       >
-        <div className="container mx-auto px-4 text-center">
-          <p>Built with ❤️ by Aarav and Kamal on NEAR Protocol</p>
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center">
+            <p>CHAIN_COMMANDER © 2025 Built by Kamal and Aarav</p>
+            <div className="flex gap-4">
+              <motion.a
+                whileHover={{ scale: 1.2, rotate: 360 }}
+                transition={{ duration: 0.5 }}
+                href="#"
+                className="hover:text-green-300"
+              >
+                <Github />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.2, rotate: 360 }}
+                transition={{ duration: 0.5 }}
+                href="#"
+                className="hover:text-green-300"
+              >
+                <Twitter />
+              </motion.a>
+            </div>
+          </div>
         </div>
       </motion.footer>
     </div>
+  );
+};
+
+// Typewriter Effect Component
+const TypewriterEffect = ({ text, delay = 0, className = "" }) => {
+  const characters = text.split("");
+  
+  return (
+    <p className={`mb-2 ${className}`}>
+      {characters.map((char, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: delay + index * 0.05 }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </p>
   );
 };
 
