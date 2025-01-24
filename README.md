@@ -29,7 +29,7 @@ The **MultiChain AI Agent on NEAR** leverages AI for seamless blockchain interop
 
 With the growing demand for multi-chain solutions and simplified blockchain interactions, this project offers a comprehensive tool for both everyday users and DeFi enthusiasts.
 
-### Flow 
+### Architecture Diagram
 
 ```mermaid
 
