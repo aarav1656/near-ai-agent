@@ -124,6 +124,34 @@ graph TB
    - **Use Case**: Extends DAOs on NEAR to interact with assets on Bitcoin and Ethereum, allowing decentralized governance across chains.
    - **Example**: A DAO on NEAR can vote on a proposal that triggers a Bitcoin purchase or an Ethereum contract execution, centralizing governance across ecosystems.
 
+### Impact on near ecosystem
+
+#### 1. **Blockchain Interoperability Advancement**
+   - Breaks down cross-chain barriers by providing a unified transaction interface across Bitcoin and Ethereum
+   - Demonstrates practical implementation of chain abstraction, reducing fragmentation in blockchain ecosystems
+
+#### 2. **Developer Ecosystem Empowerment**
+   - Provides a reference architecture for multi-chain AI agents
+   - Lowers technical barriers for building cross-chain applications
+   - Offers a template for integrating AI-powered transaction management across different blockchain networks
+
+#### 3. **Innovation in Decentralized Finance (DeFi)**
+   - Introduces novel mechanisms for seamless multi-chain asset management
+   - Creates pathways for more complex, AI-driven financial interactions without traditional intermediaries
+   - Enables sophisticated financial strategies through natural language transaction generation
+
+#### 4. **Web3 User Experience Enhancement**
+   - Simplifies blockchain interactions, potentially attracting non-technical users to decentralized technologies
+   - Reduces complexity of managing assets across multiple blockchain networks
+   - Demonstrates how AI can make blockchain technologies more accessible and user-friendly
+
+#### 5. **Protocol and Network Collaboration**
+   - Leverages NEAR Protocol's Chain Signature infrastructure for cross-chain transactions
+   - Showcases potential for collaborative ecosystem development between different blockchain networks
+   - Provides a model for future inter-protocol integrations
+
+## Additional Usecases
+
 ### 6. **Programmable Yield Aggregation and Management**
    - **Use Case**: Offers cross-chain yield farming and liquidity management, allowing users to maximize yields through AI-based decision-making.
    - **Example**: An agent that identifies optimal yield opportunities on Ethereum and moves liquidity based on predefined conditions.
