@@ -124,26 +124,6 @@ graph TB
    - **Use Case**: Extends DAOs on NEAR to interact with assets on Bitcoin and Ethereum, allowing decentralized governance across chains.
    - **Example**: A DAO on NEAR can vote on a proposal that triggers a Bitcoin purchase or an Ethereum contract execution, centralizing governance across ecosystems.
 
-### 6. **Programmable Yield Aggregation and Management**
-   - **Use Case**: Offers cross-chain yield farming and liquidity management, allowing users to maximize yields through AI-based decision-making.
-   - **Example**: An agent that identifies optimal yield opportunities on Ethereum and moves liquidity based on predefined conditions.
-
-### 7. **Enhanced Security and Data Privacy**
-   - **Use Case**: With NEAR's infrastructure and Calimero’s privacy capabilities, secure multi-chain transactions can be maintained with user data privacy.
-   - **Example**: A private payroll or DAO voting system where sensitive transaction data remains confidential, enhancing security for enterprise-grade applications.
-
-### 8. **User-Friendly Interface for Multi-Chain Operations**
-   - **Use Case**: A chatbot-like interface that allows users to manage multi-chain interactions and perform complex transactions via natural language.
-   - **Example**: Users can ask, "Generate my Bitcoin address," or "Send 0.001 BTC," simplifying their experience without requiring blockchain expertise.
-
-### 9. **AI Agent Plugins for Enhanced Wallet Capabilities**
-   - **Use Case**: Enables wallet customization with AI-driven plugins, enhancing functionality for cross-chain DeFi.
-   - **Example**: A plugin that optimizes gas usage by analyzing transactions across networks and suggesting efficient routes for users.
-
-### 10. **Hackers’ Choice and Community Engagement**
-   - **Use Case**: The project’s multi-chain and AI features could draw community interest, especially if positioned as an engaging, user-owned financial tool.
-   - **Example**: By promoting ease of use and advanced DeFi capabilities, it can attract both novice and experienced crypto users, increasing the chances for community support and Hacker’s Choice votes.
-
 ### Impact on near ecosystem
 
 #### 1. **Blockchain Interoperability Advancement**
@@ -166,6 +146,28 @@ graph TB
    - Demonstrates how AI can make blockchain technologies more accessible and user-friendly
 
 #### 5. **Protocol and Network Collaboration**
-   - Leverages NEAR Protocol's infrastructure for cross-chain transactions
+   - Leverages NEAR Protocol's Chain Signature infrastructure for cross-chain transactions
    - Showcases potential for collaborative ecosystem development between different blockchain networks
    - Provides a model for future inter-protocol integrations
+
+## Additional Usecases
+
+### 6. **Programmable Yield Aggregation and Management**
+   - **Use Case**: Offers cross-chain yield farming and liquidity management, allowing users to maximize yields through AI-based decision-making.
+   - **Example**: An agent that identifies optimal yield opportunities on Ethereum and moves liquidity based on predefined conditions.
+
+### 7. **Enhanced Security and Data Privacy**
+   - **Use Case**: With NEAR's infrastructure and Calimero’s privacy capabilities, secure multi-chain transactions can be maintained with user data privacy.
+   - **Example**: A private payroll or DAO voting system where sensitive transaction data remains confidential, enhancing security for enterprise-grade applications.
+
+### 8. **User-Friendly Interface for Multi-Chain Operations**
+   - **Use Case**: A chatbot-like interface that allows users to manage multi-chain interactions and perform complex transactions via natural language.
+   - **Example**: Users can ask, "Generate my Bitcoin address," or "Send 0.001 BTC," simplifying their experience without requiring blockchain expertise.
+
+### 9. **AI Agent Plugins for Enhanced Wallet Capabilities**
+   - **Use Case**: Enables wallet customization with AI-driven plugins, enhancing functionality for cross-chain DeFi.
+   - **Example**: A plugin that optimizes gas usage by analyzing transactions across networks and suggesting efficient routes for users.
+
+### 10. **Hackers’ Choice and Community Engagement**
+   - **Use Case**: The project’s multi-chain and AI features could draw community interest, especially if positioned as an engaging, user-owned financial tool.
+   - **Example**: By promoting ease of use and advanced DeFi capabilities, it can attract both novice and experienced crypto users, increasing the chances for community support and Hacker’s Choice votes.
