@@ -144,7 +144,7 @@ graph TB
    - **Use Case**: The project’s multi-chain and AI features could draw community interest, especially if positioned as an engaging, user-owned financial tool.
    - **Example**: By promoting ease of use and advanced DeFi capabilities, it can attract both novice and experienced crypto users, increasing the chances for community support and Hacker’s Choice votes.
 
-### Ecosystem Impact
+### Impact on near ecosystem
 
 #### 1. **Blockchain Interoperability Advancement**
    - Breaks down cross-chain barriers by providing a unified transaction interface across Bitcoin and Ethereum
