@@ -4,20 +4,39 @@ icon: bullseye-arrow
 
 # Quickstart
 
-<figure><img src="https://gitbookio.github.io/onboarding-template-images/quickstart-hero.png" alt=""><figcaption></figcaption></figure>
+### Developer's Guide to Setup
 
-Beautiful documentation starts with the content you create — and GitBook makes it easy to get started with any pre-existing content.
+To set up the Near AI Agent, follow these steps:
 
-{% hint style="info" %}
-Want to learn about writing content from scratch? Head to the [Basics](https://github.com/GitbookIO/onboarding-template/blob/main/getting-started/broken-reference/README.md) section to learn more.
-{% endhint %}
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/aarav1656/near-ai-agent.git
+   cd near-ai-agent
+   ```
 
-### Import
+2. **Install Dependencies**
+   Make sure you have Node.js installed, then run:
+   ```bash
+   npm install
+   ```
 
-GitBook supports importing content from many popular writing tools and formats. If your content already exists, you can upload a file or group of files to be imported.
+3. **Configure Environment Variables**
+   Create a `.env` file in the root directory and add your configuration:
+   ```plaintext
+   NEAR_ENV=mainnet
+   NEAR_API_KEY=your_api_key
+   ```
 
-<div data-full-width="false"><figure><img src="https://gitbookio.github.io/onboarding-template-images/quickstart-import.png" alt=""><figcaption></figcaption></figure></div>
+4. **Run the Application**
+   Start the application with:
+   ```bash
+   npm start
+   ```
 
-### Sync a repository
+5. **Access the Interface**
+   Open your browser and navigate to `http://localhost:3000` to access the Near AI Agent interface.
 
-GitBook also allows you to set up a bi-directional sync with an existing repository on GitHub or GitLab. Setting up Git Sync allows you and your team to write content in GitBook or in code, and never have to worry about your content becoming out of sync.
+6. **Explore the Features**
+   Use the provided commands to interact with the multi-chain capabilities of the agent.
+
+For more detailed instructions, refer to the [Integration Guide](../integrations/overview.md).
