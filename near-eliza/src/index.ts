@@ -23,6 +23,8 @@ import {
   parseArguments,
 } from "./config/index.ts";
 import { initializeDatabase } from "./database/index.ts";
+import { BitteWalletClient } from './clients/bitte-wallet';
+import TelegramBot from 'node-telegram-bot-api';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -170,6 +172,22 @@ const startAgents = async () => {
     const chat = startChat(characters);
     chat();
   }
+
+  // we are initializing the bot
+  const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN!, {
+    polling: true
+  });
+
+  const bitteWallet = new BitteWalletClient(bot);
+
+  bot.on('message', async (msg) => {
+    // Handle wallet commands
+    if (msg.text?.startsWith('/wallet') || msg.text?.startsWith('/connect') || msg.text?.startsWith('/sign')) {
+      await bitteWallet.handleWalletCommands(msg);
+      await bitteWallet.handleTransactionSigning(msg);
+      return;
+    }
+  });
 };
 
 startAgents().catch((error) => {
