@@ -14,8 +14,8 @@ export async function GET() {
     const pluginData = {
         openapi: "3.0.0",
         info: {
-            title: "Boilerplate",
-            description: "API for the boilerplate",
+            title: "Near AI Agent",
+            description: "API for the Near AI Agent",
             version: "1.0.0",
         },
         servers: [
@@ -256,48 +256,6 @@ export async function GET() {
                                             error: {
                                                 type: "string",
                                                 description: "Error message"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "500": {
-                            description: "Error response",
-                            content: {
-                                "application/json": {
-                                    schema: {
-                                        type: "object",
-                                        properties: {
-                                            error: {
-                                                type: "string",
-                                                description: "Error message"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "/api/tools/coinflip": {
-                get: {
-                    summary: "Coin flip",
-                    description: "Flip a coin and return the result (heads or tails)",
-                    operationId: "coinFlip",
-                    responses: {
-                        "200": {
-                            description: "Successful response",
-                            content: {
-                                "application/json": {
-                                    schema: {
-                                        type: "object",
-                                        properties: {
-                                            result: {
-                                                type: "string",
-                                                description: "The result of the coin flip (heads or tails)",
-                                                enum: ["heads", "tails"]
                                             }
                                         }
                                     }
@@ -775,7 +733,35 @@ export async function GET() {
                         }
                     }
                 }
-            }
+            },
+            "/api/health": {
+                get: {
+                  tags: ["health"],
+                  summary: "Confirms server running",
+                  description: "Test Endpoint to confirm system is running",
+                  operationId: "check-health",
+                  parameters: [],
+                  responses: {
+                    "200": {
+                      description: "Ok Message",
+                      content: {
+                        "application/json": {
+                          schema: {
+                            type: "object",
+                            properties: {
+                              message: {
+                                type: "string",
+                                description: "Ok Message",
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+            },
+
         },
     };
 
