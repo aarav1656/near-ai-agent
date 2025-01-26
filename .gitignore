@@ -20,6 +20,8 @@
 .DS_Store
 *.pem
 
+bub.lockb
+
 # debug
 npm-debug.log*
 yarn-debug.log*
