@@ -1,17 +1,29 @@
 # Table of contents
 
-* [Welcome](README.md)
+* [Welcome to Near AI Agent](README.md)
 
 ## Getting Started
 
 * [Quickstart](getting-started/quickstart.md)
-* [Publish your docs](getting-started/publish-your-docs.md)
+* [Core Concepts](getting-started/core-concepts.md)
 
-## Basics
+## Use Cases
 
-* [Editor](basics/editor.md)
-* [Markdown](basics/markdown.md)
-* [Images & media](basics/images-and-media.md)
-* [Interactive blocks](basics/interactive-blocks.md)
-* [OpenAPI](basics/openapi.md)
-* [Integrations](basics/integrations.md)
+* [Overview](use-cases/overview.md)
+* [Cross-Chain Transactions](use-cases/cross-chain-transactions.md)
+* [DeFi Operations](use-cases/defi-operations.md)
+* [DAO Governance](use-cases/dao-governance.md)
+
+## Integrations
+
+* [Overview](integrations/overview.md)
+* [OpenSea Integration](integrations/opensea.md)
+* [Compound Integration](integrations/compound.md)
+* [Uniswap Integration](integrations/uniswap.md)
+* [Telegram Bot](integrations/telegram-bot.md)
+
+## Technical Details
+
+* [Architecture](technical/architecture.md)
+* [Security](technical/security.md)
+* [API Reference](technical/api-reference.md)
