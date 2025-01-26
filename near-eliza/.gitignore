@@ -8,3 +8,5 @@ dist/
 
 db.sqlite
 .idea
+
+!src/clients/bitte-wallet.ts
