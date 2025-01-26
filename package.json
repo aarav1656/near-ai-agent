@@ -6,9 +6,11 @@
     "dev": "concurrently \"next dev \" \"make-agent dev -p 3000 --serveo\"",
     "build": "next build && make-agent deploy -u https://near-ai-agent.vercel.app",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --config jest.config.js"
   },
   "dependencies": {
+    "@bitteprotocol/agent-sdk": "^0.0.10",
     "@ethereumjs/tx": "^5.4.0",
     "@ethereumjs/util": "^9.1.0",
     "@near-wallet-selector/bitte-wallet": "^8.9.13",
@@ -17,6 +19,9 @@
     "@near-wallet-selector/meteor-wallet": "^8.9.13",
     "@near-wallet-selector/modal-ui": "^8.9.13",
     "@near-wallet-selector/my-near-wallet": "^8.9.13",
+    "@types/jest": "^29.5.14",
+    "@uniswap/sdk-core": "^6.1.0",
+    "@uniswap/smart-order-router": "^4.8.6",
     "bitcoinjs-lib": "^6.1.5",
     "bs58check": "^4.0.0",
     "elliptic": "^6.5.7",
@@ -26,6 +31,7 @@
     "keccak": "^3.0.4",
     "lucide-react": "^0.471.0",
     "near-api-js": "^4.0.4",
+    "near-safe": "^0.9.4",
     "near-seed-phrase": "^0.2.1",
     "next": "14.2.15",
     "noble-hashes": "^0.3.1",
@@ -36,11 +42,7 @@
     "vercel-url": "^0.2.1",
     "viem": "^2.18.4",
     "web3": "^4.14.0",
-    "@bitteprotocol/agent-sdk": "^0.0.10",
-    "@uniswap/sdk-core": "^6.1.0",
-    "@uniswap/smart-order-router": "^4.8.6",
-    "near-safe": "^0.9.4",
-     "zerion-sdk": "^0.0.13"
+    "zerion-sdk": "^0.0.13"
   },
   "devDependencies": {
     "@types/node": "^20",
