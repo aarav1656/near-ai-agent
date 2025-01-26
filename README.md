@@ -2,7 +2,7 @@
 
 Built using Bitte , Helps the users Build and Execute Transactions on Bitcoin and EVM Chains.
 
-Check the [docs](https://quiver-prose-73a.notion.site/near-ai-agent-17bfce1a915b8045a629e300ca42cf97?pvs=73) 
+Check the [Gitbook Documentation](https://near-ai-agent.gitbook.io/near-ai-agent-docs) 
 
 ## Features
 
@@ -102,27 +102,6 @@ graph TB
     class ETH_NET,BTC_NET,MEMPOOL network
 
 ```
-### Use Cases
-
-### 1. **Cross-Chain Transaction Management**
-   - **Use Case**: Allows users to seamlessly build, sign, and execute transactions on both Bitcoin and Ethereum through a unified NEAR interface.
-   - **Example**: Users can generate and send assets across different blockchains using natural language commands, making it easy to manage multi-chain interactions.
-
-### 2. **Chain Abstraction for Better UX**
-   - **Use Case**: Simplifies blockchain interactions by letting users manage assets and execute transactions on Bitcoin and EVM-compatible chains directly from NEAR.
-   - **Example**: Users can manage Bitcoin and Ethereum assets without needing cross-chain bridges, streamlining transactions and reducing technical barriers.
-
-### 3. **On-Chain AI-Powered Agents**
-   - **Use Case**: Enables developers to create intelligent, multi-chain agents that can autonomously execute transactions, monitor balances, and manage assets across chains.
-   - **Example**: An AI agent that monitors gas prices across chains to optimize transaction costs or provides trading signals for better asset management.
-
-### 4. **Secure Multi-Chain DeFi Interactions**
-   - **Use Case**: Empowers DeFi users to perform complex financial operations like lending, borrowing, and liquidity provision across chains without navigating different wallets.
-   - **Example**: Users can create a Bitcoin-backed loan on Ethereum, or generate multi-chain yield farming transactions via simple commands.
-
-### 5. **Cross-Chain DAO and Voting Mechanisms**
-   - **Use Case**: Extends DAOs on NEAR to interact with assets on Bitcoin and Ethereum, allowing decentralized governance across chains.
-   - **Example**: A DAO on NEAR can vote on a proposal that triggers a Bitcoin purchase or an Ethereum contract execution, centralizing governance across ecosystems.
 
 ### Impact on near ecosystem
 
@@ -150,8 +129,28 @@ graph TB
    - Showcases potential for collaborative ecosystem development between different blockchain networks
    - Provides a model for future inter-protocol integrations
 
-## Additional Usecases
+### Use Cases
 
+### 1. **Cross-Chain Transaction Management**
+   - **Use Case**: Allows users to seamlessly build, sign, and execute transactions on both Bitcoin and Ethereum through a unified NEAR interface.
+   - **Example**: Users can generate and send assets across different blockchains using natural language commands, making it easy to manage multi-chain interactions.
+
+### 2. **Chain Abstraction for Better UX**
+   - **Use Case**: Simplifies blockchain interactions by letting users manage assets and execute transactions on Bitcoin and EVM-compatible chains directly from NEAR.
+   - **Example**: Users can manage Bitcoin and Ethereum assets without needing cross-chain bridges, streamlining transactions and reducing technical barriers.
+
+### 3. **On-Chain AI-Powered Agents**
+   - **Use Case**: Enables developers to create intelligent, multi-chain agents that can autonomously execute transactions, monitor balances, and manage assets across chains.
+   - **Example**: An AI agent that monitors gas prices across chains to optimize transaction costs or provides trading signals for better asset management.
+
+### 4. **Secure Multi-Chain DeFi Interactions**
+   - **Use Case**: Empowers DeFi users to perform complex financial operations like lending, borrowing, and liquidity provision across chains without navigating different wallets.
+   - **Example**: Users can create a Bitcoin-backed loan on Ethereum, or generate multi-chain yield farming transactions via simple commands.
+
+### 5. **Cross-Chain DAO and Voting Mechanisms**
+   - **Use Case**: Extends DAOs on NEAR to interact with assets on Bitcoin and Ethereum, allowing decentralized governance across chains.
+   - **Example**: A DAO on NEAR can vote on a proposal that triggers a Bitcoin purchase or an Ethereum contract execution, centralizing governance across ecosystems.
+     
 ### 6. **Programmable Yield Aggregation and Management**
    - **Use Case**: Offers cross-chain yield farming and liquidity management, allowing users to maximize yields through AI-based decision-making.
    - **Example**: An agent that identifies optimal yield opportunities on Ethereum and moves liquidity based on predefined conditions.
