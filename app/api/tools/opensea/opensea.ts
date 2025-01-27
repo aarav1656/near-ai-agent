@@ -17,12 +17,12 @@ export async function GET(req: NextRequest) {
                 return NextResponse.json({ error: "Missing contract or tokenId" }, { status: 400 });
             }
 
-            const asset = await sdk.api.getNFT({ contract, identifier: tokenId });
+            const asset = await sdk.api.getNFT( contract, tokenId );
             return NextResponse.json(asset);
 
         } else if (pathSegments[3] === "collection") {
             const collectionSlug = pathSegments[4];
-            const collection = await sdk.api.getCollection({ slug: collectionSlug });
+            const collection = await sdk.api.getCollection(collectionSlug );
             return NextResponse.json(collection);
         }
 
