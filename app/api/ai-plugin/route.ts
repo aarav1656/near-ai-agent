@@ -848,6 +848,126 @@ export async function GET() {
                   },
                 },
             },
+            "/api/tools/opensea/asset/{assetId}": {
+                get: {
+                    summary: "Get Asset Details",
+                    description: "Fetch details about a specific asset.",
+                    parameters: [
+                        {
+                            name: "assetId",
+                            in: "path",
+                            required: true,
+                            description: "The ID of the asset to fetch.",
+                            schema: {
+                                type: "string",
+                            },
+                        },
+                    ],
+                    responses: {
+                        "200": {
+                            description: "Successful response",
+                            content: {
+                                "application/json": {
+                                    schema: {
+                                        type: "object",
+                                        properties: {
+                                            // Define the asset properties here
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            "/api/tools/opensea/collection/{collectionSlug}": {
+                get: {
+                    summary: "Get Collection Details",
+                    description: "Fetch details about a specific collection.",
+                    parameters: [
+                        {
+                            name: "collectionSlug",
+                            in: "path",
+                            required: true,
+                            description: "The slug of the collection to fetch.",
+                            schema: {
+                                type: "string",
+                            },
+                        },
+                    ],
+                    responses: {
+                        "200": {
+                            description: "Successful response",
+                            content: {
+                                "application/json": {
+                                    schema: {
+                                        type: "object",
+                                        properties: {
+                                            // Define the collection properties here
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            "/api/tools/opensea/offer": {
+                post: {
+                    summary: "Create an Offer",
+                    description: "Create an offer for an asset.",
+                    requestBody: {
+                        required: true,
+                        content: {
+                            "application/json": {
+                                schema: {
+                                    type: "object",
+                                    properties: {
+                                        assetId: {
+                                            type: "string",
+                                            description: "The ID of the asset to offer.",
+                                        },
+                                        price: {
+                                            type: "number",
+                                            description: "The price of the offer.",
+                                        },
+                                        expiration: {
+                                            type: "number",
+                                            description: "The expiration time of the offer.",
+                                        },
+                                    },
+                                    required: ["assetId", "price", "expiration"],
+                                },
+                            },
+                        },
+                    },
+                    responses: {
+                        "200": {
+                            description: "Successful offer creation",
+                            content: {
+                                "application/json": {
+                                    schema: {
+                                        type: "object",
+                                        properties: {
+                                            message: {
+                                                type: "string",
+                                            },
+                                            offer: {
+                                                type: "object",
+                                                properties: {
+                                                    assetId: { type: "string" },
+                                                    price: { type: "number" },
+                                                    expiration: { type: "number" },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         components: {
             parameters: {
