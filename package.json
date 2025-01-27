@@ -13,6 +13,7 @@
     "@bitteprotocol/agent-sdk": "^0.0.10",
     "@ethereumjs/tx": "^5.4.0",
     "@ethereumjs/util": "^9.1.0",
+    "@lidofinance/lido-ethereum-sdk": "^4.1.0",
     "@near-wallet-selector/bitte-wallet": "^8.9.13",
     "@near-wallet-selector/core": "^8.9.13",
     "@near-wallet-selector/here-wallet": "^8.9.13",
