@@ -18,7 +18,6 @@ import {
   BitteAiChatProps,
   ChatRequestBody,
   type BitteToolResult,
-  MultiAgentMessage,
 } from "../../types/types";
 import { useAccount } from "../AccountContext";
 import { Button } from "../ui/button";
@@ -29,19 +28,13 @@ import { executeLocalToolCall, executeToolCall } from "../../lib/local-agent";
 
 export const ChatContent = ({
   agentId,
-  agents,
-  activeAgents,
-  onAgentJoin,
   colors = defaultColors,
   apiUrl,
   apiKey,
   options,
   messages: initialMessages,
   welcomeMessageComponent,
-}: BitteAiChatProps & {
-  activeAgents: Set<string>;
-  onAgentJoin: (agentId: string) => void;
-}) => {
+}: BitteAiChatProps) => {
   const chatId = useRef(options?.chatId || generateId()).current;
   const [isAtBottom, setIsAtBottom] = useState(true);
   const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
@@ -96,17 +89,12 @@ export const ChatContent = ({
       config: {
         mode: AssistantsMode.DEFAULT,
         agentId,
-        availableAgents: agents,
-        activeAgents: Array.from(activeAgents),
       },
       accountId: accountId || "",
       evmAddress: evmAddress as Hex,
       chainId,
       localAgent: options?.localAgent,
     } satisfies ChatRequestBody,
-    onFinish: (message) => {
-      handleAgentCollaboration(message);
-    },
   });
 
   const groupedMessages = useMemo(() => {
@@ -173,28 +161,6 @@ export const ChatContent = ({
     scrollToBottom(messagesRef.current);
     setAutoScrollEnabled(true);
   }, [scrollToBottom]);
-
-  const handleAgentCollaboration = async (message: Message) => {
-    const collaborationRequest = extractCollaborationRequest(message.content);
-    if (collaborationRequest) {
-      const { targetAgentId, task } = collaborationRequest;
-      
-      const targetAgent = agents?.find(a => a.id === targetAgentId);
-      if (targetAgent && !activeAgents.has(targetAgentId)) {
-        onAgentJoin(targetAgentId);
-        
-        const systemMessage: MultiAgentMessage = {
-          id: generateId(),
-          role: 'system',
-          content: `${targetAgent.name} has joined to help with: ${task}`,
-          agentId: targetAgentId,
-          parentAgentId: agentId
-        };
-        
-        messages.push(systemMessage);
-      }
-    }
-  };
 
   return (
     <div className='bitte-flex bitte-h-full bitte-w-full bitte-flex-col bitte-gap-4 bitte-text-justify'>
@@ -321,14 +287,3 @@ export const ChatContent = ({
     </div>
   );
 };
-
-function extractCollaborationRequest(content: string) {
-  const match = content.match(/@([a-zA-Z0-9-]+)\s+for\s+(.+)/);
-  if (match) {
-    return {
-      targetAgentId: match[1],
-      task: match[2]
-    };
-  }
-  return null;
-}

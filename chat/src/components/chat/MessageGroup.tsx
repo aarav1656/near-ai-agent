@@ -12,7 +12,7 @@ import { getAgentIdFromMessage, getTypedToolInvocations } from "../../lib/chat";
 import { BittePrimitiveName, DEFAULT_AGENT_ID } from "../../lib/constants";
 import { BITTE_BLACK_IMG } from "../../lib/images";
 import { isDataString } from "../../lib/regex";
-import { SmartActionAiMessage, MultiAgentMessage } from "../../types/types";
+import { SmartActionAiMessage } from "../../types/types";
 import {
   Accordion,
   AccordionContent,
@@ -44,7 +44,6 @@ interface MessageGroupProps {
   messageBackgroundColor: string;
   borderColor: string;
   textColor: string;
-  activeAgents: Set<string>;
 }
 
 export const MessageGroup = ({
@@ -58,7 +57,6 @@ export const MessageGroup = ({
   borderColor,
   textColor,
   chatId,
-  activeAgents,
 }: MessageGroupProps) => {
   // State to track agentId for each message
   const [messagesWithAgentId, setMessagesWithAgentId] = useState<
@@ -97,12 +95,9 @@ export const MessageGroup = ({
 
   return (
     <div style={{ color: textColor }}>
-      {messagesWithAgentId?.map((message: MultiAgentMessage, index) => {
+      {messagesWithAgentId?.map((message, index) => {
         const uniqueKey = `${groupKey}-${index}`;
 
-        // Add visual indicator for agent collaboration
-        const showCollaboration = message.parentAgentId && message.agentId !== message.parentAgentId;
-        
         if (message.toolInvocations) {
           for (const invocation of message.toolInvocations) {
             const { toolName, state, result } = getTypedToolInvocations(
@@ -169,11 +164,6 @@ export const MessageGroup = ({
             }}
             key={`${message.id}-${index}`}
           >
-            {showCollaboration && (
-              <div className="bitte-text-xs bitte-text-gray-500 bitte-mb-2">
-                Collaborating with {formatAgentId(message.parentAgentId)}
-              </div>
-            )}
             <Accordion
               type='single'
               collapsible

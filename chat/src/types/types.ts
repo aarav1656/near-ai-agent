@@ -185,20 +185,6 @@ export type ChatComponentColors = {
   borderColor?: string;
 };
 
-export interface AgentConfig {
-  id: string;
-  name: string;
-  image?: string;
-  description?: string;
-  capabilities?: string[];
-}
-
-export interface MultiAgentMessage extends Message {
-  agentId: string;
-  parentAgentId?: string; // ID of agent that called this agent
-  collaborators?: string[]; // IDs of other agents involved
-}
-
 /**
  * Props for the BitteAiChat component
  * @param agentid - ID of the AI agent to use for chat interactions
@@ -226,12 +212,6 @@ export interface BitteAiChatProps {
     };
   };
   welcomeMessageComponent?: JSX.Element;
-  agents?: AgentConfig[]; // Available agents for collaboration
-  multiAgentConfig?: {
-    maxAgents?: number;
-    allowAgentToAgentCalls?: boolean;
-    requireApproval?: boolean;
-  };
 }
 
 /**
