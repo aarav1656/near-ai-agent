@@ -1,0 +1,94 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": [
+    "validate-filename",
+    "@typescript-eslint",
+    "eslint-plugin-unused-imports",
+    "react-hooks",
+    "tailwindcss"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    // All of these will be turned on one at a time and handled in separate PRs (there are hundreds)
+    "unused-imports/no-unused-imports": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }],
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "tailwindcss/no-custom-classname": [
+      "off",
+      {
+        "cssFiles": ["src/**/*.css"],
+        "callees": ["classnames", "clsx", "twMerge", "cn"]
+      }
+    ], // we need this rule off for now cause we have a lot of custom classes.
+    "tailwindcss/classnames-order": ["error"],
+    "tailwindcss/enforces-negative-arbitrary-values": ["error"],
+    "tailwindcss/enforces-shorthand": ["error"],
+    "tailwindcss/migration-from-tailwind-2": ["error"],
+    "tailwindcss/no-contradicting-classname": [
+      "error"
+    ],
+    "@next/next/no-img-element": "off",
+    "jsx-a11y/alt-text": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "validate-filename/naming-rules": [
+      "error",
+      {
+        "rules": [
+          {
+            "case": "pascal",
+            "target": "**/components/**"
+          },
+          {
+            "case": "camel",
+            "target": "**/data/queries/**",
+            "patterns": "^[a-zA-Z0-9]+\\.graphql\\.ts$"
+          },
+          {
+            "case": "camel",
+            "target": "**/lib/data/**/*.ts"
+          },
+          {
+            "case": "kebab",
+            "target": "**/app/**",
+            "patterns": "^(page|layout|loading|error|not-found|route|template|global-error|error)\\.tsx?$"
+          },
+
+          {
+            "case": "kebab",
+            "target": "**/lib/**"
+          },
+          {
+            "case": "camel",
+            "target": "**/hooks/**",
+            "patterns": "^use"
+          },
+          {
+            "case": "pascal",
+            "target": "**/providers/**",
+            "patterns": "^[a-zA-Z]*Provider"
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": ["cn"],
+      "config": "tailwind.config.ts"
+    }
+  }
+}
