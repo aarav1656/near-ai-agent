@@ -2,7 +2,7 @@ import { Message } from "ai";
 import { useEffect, useState } from "react";
 import { convertToUIMessages } from "../lib/chat";
 import { fetchChatHistory } from "../lib/fetchChatHistory";
-import { BitteAiChatProps } from "../types/types";
+import { BitteAiChatProps, AgentConfig } from "../types/types";
 import { AccountProvider } from "./AccountContext";
 import { ChatContent } from "./chat/ChatContent";
 
@@ -13,9 +13,12 @@ export const BitteAiChat = ({
   apiKey,
   historyApiUrl,
   agentId,
+  agents,
   options,
   welcomeMessageComponent,
-}: BitteAiChatProps) => {
+}: BitteAiChatProps & {
+  agents?: AgentConfig[];
+}) => {
   const [loadedData, setLoadedData] = useState({
     agentIdLoaded: "",
     uiMessages: [] as Message[],
@@ -23,6 +26,8 @@ export const BitteAiChat = ({
 
   const chatId =
     typeof window !== "undefined" && sessionStorage.getItem("chatId");
+
+  const [activeAgents, setActiveAgents] = useState<Set<string>>(new Set([agentId]));
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,6 +46,12 @@ export const BitteAiChat = ({
     fetchData();
   }, [chatId, historyApiUrl]);
 
+  useEffect(() => {
+    if (agentId) {
+      setActiveAgents(new Set([agentId]));
+    }
+  }, [agentId]);
+
   const { agentIdLoaded, uiMessages } = loadedData;
 
   return (
@@ -51,6 +62,9 @@ export const BitteAiChat = ({
         apiUrl={apiUrl}
         apiKey={apiKey}
         agentId={agentId ?? agentIdLoaded}
+        agents={agents}
+        activeAgents={activeAgents}
+        onAgentJoin={(agentId) => setActiveAgents(prev => new Set([...prev, agentId]))}
         messages={uiMessages}
         options={{
           agentName: options?.agentName,

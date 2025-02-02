@@ -44,6 +44,7 @@ interface MessageGroupProps {
   messageBackgroundColor: string;
   borderColor: string;
   textColor: string;
+  activeAgents: Set<string>;
 }
 
 export const MessageGroup = ({
@@ -57,6 +58,7 @@ export const MessageGroup = ({
   borderColor,
   textColor,
   chatId,
+  activeAgents,
 }: MessageGroupProps) => {
   // State to track agentId for each message
   const [messagesWithAgentId, setMessagesWithAgentId] = useState<
@@ -155,6 +157,9 @@ export const MessageGroup = ({
           }
         }
 
+        // Add visual indicator for agent collaboration
+        const showCollaboration = message.parentAgentId && message.agentId !== message.parentAgentId;
+        
         return (
           <Card
             className='bitte-p-6'
@@ -164,6 +169,11 @@ export const MessageGroup = ({
             }}
             key={`${message.id}-${index}`}
           >
+            {showCollaboration && (
+              <div className="bitte-text-xs bitte-text-gray-500 bitte-mb-2">
+                Collaborating with {formatAgentId(message.parentAgentId)}
+              </div>
+            )}
             <Accordion
               type='single'
               collapsible
