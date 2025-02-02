@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 1024px) {
+  .textarea-chat {
+    padding-left: 16px !important;
+  }
+}
+
+@layer base {
+  :root {
+    --chart-1: 217.2 91.2% 59.8%;
+    --chart-2: 160.1 84.1% 39.4%;
+    --chart-3: 37.7 92.1% 50.2%;
+    --chart-4: 258.3 89.5% 66.3%;
+    --chart-5: 330.4 81.2% 60.4%;
+  }
+}
